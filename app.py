@@ -1,10 +1,19 @@
 from utils import DeepSearch
 
-data = {'a': 123, 'b': {'address': {'city': 'mumbai'}}}
-keys = ['b', 'address', 'city' ]
+'''
+    DeepSearch.get()
+'''
 
-res = DeepSearch(keys).get('b', 'address', 'city')
-print(res)
+# Dictionaries
+data1 = {'a': 123, 'b': {'address': {'city': 'mumbai'}}}
+res = DeepSearch(data1).get('b','address','city')
 
-res = DeepSearch(data).contains(123)
-print(res)
+# Dictionaries -> lists
+data2 = {'a':123, 'b': [{'city':'Pune'},{'city':'Paris'},{'city':'Goa'}]}
+res = DeepSearch(data2).get('b','city')
+
+# Dictionaries -> list -> Dictionaries
+res = DeepSearch(data3).get('b','address','city')
+data3 = {'a':123, 'b': [{'address':{'city':'Pune'}},{'address':{'city':'Mumbai'}}]}
+
+

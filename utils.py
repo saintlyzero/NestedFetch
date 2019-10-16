@@ -20,10 +20,17 @@ class DeepSearch(dict or list):
             return default
 
 
+    # def set(self, *keys, value, build=False):
+    #     '''@Arguments: *keys -> sequential keys to iterate'''
+    #     updated = False
+    #     try:
+    #         for key in keys:
+    #             if value:
+
     def contains(self, value, default=None):
         '''@Arguments: value -> value to check if it exists'''
         
-        if value in self.values():
-            return True
-        return False
+        for key, value in self.items():
+            if isinstance(self, dict):
+
 
