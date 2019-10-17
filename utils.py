@@ -1,4 +1,4 @@
-class DeepSearch(dict or list):
+class DeepSearch(dict):
     '''Class to fetch value from Nested Dictionary'''
 
     def get(self, *keys, default=None):
