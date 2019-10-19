@@ -1,4 +1,4 @@
-class DeepSearch(dict):
+class NestedFetch(dict):
     '''Class to fetch value from Nested Dictionary'''
 
     def get(self, *keys, default=None):
@@ -8,7 +8,10 @@ class DeepSearch(dict):
             for key in keys:
                 if value:
                     if isinstance(value, list):
-                        value = [v.get(key, default) if v else None for v in value]
+                        if isinstance(key, int):
+                            value = value[key]
+                        else:
+                            value = list(map((lambda o: default if o == default else o.get(key, default)), value))                        
                     else:
                         value = value.get(key, default)
                 else:
@@ -27,10 +30,10 @@ class DeepSearch(dict):
     #         for key in keys:
     #             if value:
 
-    def contains(self, value, default=None):
-        '''@Arguments: value -> value to check if it exists'''
+    # def contains(self, value, default=None):
+    #     '''@Arguments: value -> value to check if it exists'''
         
-        for key, value in self.items():
-            if isinstance(self, dict):
+    #     for key, value in self.items():
+    #         if isinstance(self, dict):
 
 
