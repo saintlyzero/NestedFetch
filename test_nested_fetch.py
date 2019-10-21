@@ -1,6 +1,6 @@
 import unittest  
 from nested_fetch.nested_fetch import nested_get, nested_set
-# import nested_fetch.nested_fetch
+
 class TestNestedFetch(unittest.TestCase):
 
     

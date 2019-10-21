@@ -1,0 +1,7 @@
+language: python
+
+python:
+    - "3.6"
+
+script:
+    - test_nested_fetch.py
