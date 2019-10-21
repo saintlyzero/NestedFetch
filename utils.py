@@ -1,8 +1,9 @@
 class NestedFetch(dict):
     '''Class to fetch value from Nested Dictionary'''
 
-    def get(self, *keys, default=None):
-        '''@Arguments: *keys -> sequential keys to iterate'''
+
+    def get(self, keys, default=None):
+        '''@Arguments: keys -> sequential keys to iterate'''
         value = None
         try: 
             for key in keys:
@@ -21,7 +22,6 @@ class NestedFetch(dict):
             return value
         except Exception as e:
             return default
-
 
     def set_value(self, keys, value, create_missing=False):
         def _set_value(data, keys, value, create_missing=False, _count = 0):
@@ -58,3 +58,5 @@ class NestedFetch(dict):
                 return count
 
         return(_set_value(self, keys, value=value, create_missing=False, _count = 0))
+
+        

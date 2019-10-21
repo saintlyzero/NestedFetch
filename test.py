@@ -66,10 +66,18 @@ def nested_set(dic, keys, value, create_missing=False, _count = 0):
         return count
  
 
+data = {
+    'name': 'Alan',
+    'address': [{
+        'cities': [{'city': 'Sataroni'}, {'city': 'Sataroni'}]
+    }, {
+        'cities': [{'city': 'Celta'}]
+    }]
+}
 
 print(data)
 # print(nested_set(data, ["address","cities",0,"city"], "Naples", create_missing = False))
-print(nested_set(data, ["address", 'cities', 'city'], "Apli Mumbai", create_missing = False))
+print(nested_set(data,  ["address", 0, 'cities' ], "Apli Mumbai", create_missing = True))
 print(data)
 
 
