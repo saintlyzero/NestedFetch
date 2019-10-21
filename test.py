@@ -1,3 +1,5 @@
+from nested_fetch.nested_fetch import NestedFetch
+
 #import copy
 # import functools 
 
@@ -75,9 +77,24 @@ data = {
     }]
 }
 
-print(data)
+# print(data)
 # print(nested_set(data, ["address","cities",0,"city"], "Naples", create_missing = False))
-print(nested_set(data,  ["address", 0, 'cities' ], "Apli Mumbai", create_missing = True))
-print(data)
+# print(nested_set(data,  ["address", 0, 'cities' ], "Apli Mumbai", create_missing = True))
+# print(data)
 
 
+simple_get_data = {
+        'name': 'Jesse Pinkman',
+        'details': {
+            'address':{
+                'city': 'Albuquerque'
+            }
+        }
+    }
+
+print(simple_get_data)
+print(nested_set(simple_get_data,['details','address','state'], "New Mexico", create_missing=True))
+print(simple_get_data)
+# print(simple_get_data)
+# print(NestedFetch(simple_get_data).set_value(['details','address','state'], "New Mexico", create=True))
+# print(simple_get_data)

@@ -23,8 +23,9 @@ class NestedFetch(dict):
         except Exception as e:
             return default
 
-    def set_value(self, keys, value, create_missing=False):
-        def _set_value(data, keys, value, create_missing=False, _count = 0):
+
+    def set_value(self, keys, value, create=False):
+        def _set_value(data, keys, value, create=False, _count = 0):
             d = data
             count = _count
             try:
@@ -38,15 +39,15 @@ class NestedFetch(dict):
                                     count += 1
                                 else:
                                     d = d[keys[itr+1]]
-                                    count = _set_value(d, keys[itr+2:], value, create_missing, _count= count)
+                                    count = _set_value(d, keys[itr+2:], value, create, _count= count)
                             else:
-                                count = sum(list(map((lambda o: _set_value(o,keys[itr+1:],value,create_missing,_count = count)),d)))
+                                count = sum(list(map((lambda o: _set_value(o,keys[itr+1:],value,create,_count = count)),d)))
                             return count
-                    elif create_missing:
+                    elif create:
                         d = d.setdefault(key, {})
                     else:
                         return count
-                if (keys[-1] in d or create_missing):
+                if (keys[-1] in d or create):
                     d[keys[-1]] = value
                     return count + 1
                 elif (isinstance(keys[-1], int)) and isinstance(d, list):
@@ -57,6 +58,6 @@ class NestedFetch(dict):
             except Exception as e:
                 return count
 
-        return(_set_value(self, keys, value=value, create_missing=False, _count = 0))
+        return(_set_value(self, keys, value=value, create=False, _count = 0))
 
         
