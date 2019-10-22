@@ -3,3 +3,5 @@ language: python
 python:
     - 3.6
 
+script:
+    - python3 test_nested_fetch.py
