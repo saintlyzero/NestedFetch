@@ -1,4 +1,8 @@
-# NestedFetch
+# ℕ𝕖𝕤𝕥𝕖𝕕𝔽𝕖𝕥𝕔𝕙
+[![Build Status](https://travis-ci.org/saintlyzero/NestedFetch.svg?branch=master)](https://travis-ci.org/saintlyzero/NestedFetch)  ![GitHub](https://img.shields.io/github/license/saintlyzero/NestedFetch?color=light%20green)
 
-[![Build Status](https://travis-ci.org/saintlyzero/NestedFetch.svg?branch=master)](https://travis-ci.org/saintlyzero/NestedFetch) ![GitHub](https://img.shields.io/github/license/saintlyzero/NestedFetch?color=light%20green)
-[![Coverage Status](https://coveralls.io/repos/github/saintlyzero/NestedFetch/badge.svg?branch=master)](https://coveralls.io/github/saintlyzero/NestedFetch?branch=master)
+## Overview
+**NestedFetch** provides syntactic sugar 🍬 to deal with nested python dictionaries 🐍.
+You can `get` `set` `update`  values from deeply nested dictionaries with a more concise, easier and a more *KeyError*, *IndexError* free way 😌.  
+
+

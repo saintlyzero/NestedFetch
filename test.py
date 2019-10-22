@@ -1,5 +1,5 @@
-from nested_fetch.nested_fetch import NestedFetch
-
+# from nested_fetch.nested_fetch import NestedFetch
+from nested_fetch.nested_fetch import nested_get, nested_set
 #import copy
 # import functools 
 
@@ -92,9 +92,44 @@ simple_get_data = {
         }
     }
 
-print(simple_get_data)
-print(nested_set(simple_get_data,['details','address','state'], "New Mexico", create_missing=True))
-print(simple_get_data)
+# print(simple_get_data)
+# print(nested_set(simple_get_data,['details','address','state'], "New Mexico", create_missing=True))
+# print(simple_get_data)
 # print(simple_get_data)
 # print(NestedFetch(simple_get_data).set_value(['details','address','state'], "New Mexico", create=True))
 # print(simple_get_data)
+
+data = {
+    "league":"Champions League",
+    "matches":[
+        {
+            "match_id": "match_1",
+            "goals":[
+                {
+                    "time": 13,
+                    "scorrer": "Lionel Messi",
+                    "assist": "Luis Suarez"
+                },
+                {
+                    "time": 78,
+                    "scorrer": "Luis Suarez",
+                    "assist": "Ivan Rakitic"
+                }
+            ] 
+        },
+        {
+            "match_id": "match_2",
+            "goals":[
+                {
+                    "time": 36,
+                    "scorrer": "C. Ronaldo",
+                    "assist": "Luka Modric"
+                }
+            ] 
+        }
+    ]
+}
+
+# print(data)
+print(nested_get(data,['matches','goals','scorrer']))
+# print(data)
