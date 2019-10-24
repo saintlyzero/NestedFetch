@@ -1,4 +1,5 @@
 # from nested_fetch.nested_fetch import NestedFetch
+import itertools
 from nested_fetch.nested_fetch import nested_get, nested_set
 #import copy
 # import functools 
@@ -76,6 +77,10 @@ data = {
         'cities': [{'city': 'Celta'}]
     }]
 }
+
+def flatten(data):
+    return list(itertools.chain.from_iterable(data))
+
 
 # print(data)
 # print(nested_set(data, ["address","cities",0,"city"], "Naples", create_missing = False))
@@ -182,3 +187,4 @@ def nested_get1(data, keys, default=None):
 # data2 = [{'time': 13, 'scorrer': 'Lionel Messi', 'assist': 'Luis Suarez'}, {'time': 78, 'scorrer': 'Luis Suarez', 'assist': 'Ivan Rakitic'}]
 res = nested_get1(data,['matches','goals','scorrer'])
 print(res)
+print(flatten(res))
