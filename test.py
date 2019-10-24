@@ -108,12 +108,28 @@ data = {
                 {
                     "time": 13,
                     "scorrer": "Lionel Messi",
-                    "assist": "Luis Suarez"
+                    "assist": "Luis Suarez",
+                    "details": [
+                        {
+                            "position":"outside-box",
+                        },
+                        {
+                            "position":"right-side",
+                        }
+                    ]
                 },
                 {
                     "time": 78,
                     "scorrer": "Luis Suarez",
-                    "assist": "Ivan Rakitic"
+                    "assist": "Ivan Rakitic",
+                    "details": [
+                        {
+                            "position":"inside-box",
+                        },
+                        {
+                            "position":"left-side",
+                        }
+                    ]
                 }
             ] 
         },
@@ -123,7 +139,15 @@ data = {
                 {
                     "time": 36,
                     "scorrer": "C. Ronaldo",
-                    "assist": "Luka Modric"
+                    "assist": "Luka Modric",
+                    "details": [
+                        {
+                            "position":"penalty",
+                        },
+                        {
+                            "position":"d-box",
+                        }
+                    ]
                 }
             ] 
         }
@@ -131,5 +155,30 @@ data = {
 }
 
 # print(data)
-print(nested_get(data,['matches','goals','scorrer']))
+# print(nested_get(data,['matches','goals']))
 # print(data)
+
+def nested_get1(data, keys, default=None):
+    value = data
+    try:
+        for itr, key in enumerate(keys):
+            if isinstance(value, list):
+                if isinstance(key, int):
+                    if any(isinstance(o, list) for o in value):
+                        value = list(map((lambda o: default if (key >= len(o)) else o[key]), value))                        
+                    else:
+                        value = value[key]
+                else:
+                    value = list(map((lambda o: default if o == default else nested_get1(o, [key], default=default)), value))                        
+            else:
+                value = dict.get(value, key, default)
+            
+            if value == default:
+                break
+        return value
+    except Exception as e:
+        return default
+
+# data2 = [{'time': 13, 'scorrer': 'Lionel Messi', 'assist': 'Luis Suarez'}, {'time': 78, 'scorrer': 'Luis Suarez', 'assist': 'Ivan Rakitic'}]
+res = nested_get1(data,['matches','goals','scorrer'])
+print(res)

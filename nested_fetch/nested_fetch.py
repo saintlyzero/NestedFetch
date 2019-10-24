@@ -5,9 +5,16 @@ def nested_get(data, keys, default=None):
     value = None
     # import pdb; pdb.set_trace()
     try: 
-        for key in keys:
+        for itr, key in enumerate(keys):
             if value:
                 if isinstance(value, list):
+                    # if any(isinstance(o, list) for o in value):
+                        # new_value = []
+                        # for el in value:
+                        #     p = nested_get(el,keys[itr:],default=default)
+                        #     new_value.append(p)
+                        # value = new_value
+
                     if isinstance(key, int):
                         value = value[key]
                     else:
@@ -15,7 +22,10 @@ def nested_get(data, keys, default=None):
                 else:
                     value = value.get(key, default)
             else:
-                value = dict.get(data, key, default)
+                if isinstance(data, list):
+                    pass
+                else:
+                    value = dict.get(data, key, default)
             if not value:
                 break
         return value
