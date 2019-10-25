@@ -3,6 +3,6 @@
 
 ## Overview
 **NestedFetch** provides syntactic sugar 🍬 to deal with nested python dictionaries 🐍.
-You can `get` `set` `update`  values from deeply nested dictionaries with a more concise, easier and a more *KeyError*, *IndexError* free way 😌.  
+You can `get` `set` `update`, `flatten`  values from deeply nested dictionaries with a more concise, easier and a more *KeyError*, *IndexError* free way 😌.  
 
-
+![enter image description here](asset/NestedFetchConcept.jpg)

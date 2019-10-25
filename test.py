@@ -189,7 +189,8 @@ def nested_get1(data, keys, default=None):
     except Exception as e:
         return default
 
-# data2 = [{'time': 13, 'scorrer': 'Lionel Messi', 'assist': 'Luis Suarez'}, {'time': 78, 'scorrer': 'Luis Suarez', 'assist': 'Ivan Rakitic'}]
+
+# asdsadata2 = [{'time': 13, 'scorrer': 'Lionel Messi', 'assist': 'Luis Suarez'}, {'time': 78, 'scorrer': 'Luis Suarez', 'assist': 'Ivan Rakitic'}]
 # res = nested_get1(data,['matches','goals','scorrer'])
 # print(res)
 # print(flatten(res))
