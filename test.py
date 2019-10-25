@@ -79,7 +79,11 @@ data = {
 }
 
 def flatten(data):
-    return list(itertools.chain.from_iterable(data))
+    
+    if isinstance(data,list):
+        while(any(isinstance(o, list) for o in data)):
+            data = list(itertools.chain.from_iterable(data)) 
+    return data    
 
 
 # print(data)
@@ -164,6 +168,7 @@ data = {
 # print(data)
 
 def nested_get1(data, keys, default=None):
+    # import pdb; pdb.set_trace()
     value = data
     try:
         for itr, key in enumerate(keys):
@@ -185,6 +190,20 @@ def nested_get1(data, keys, default=None):
         return default
 
 # data2 = [{'time': 13, 'scorrer': 'Lionel Messi', 'assist': 'Luis Suarez'}, {'time': 78, 'scorrer': 'Luis Suarez', 'assist': 'Ivan Rakitic'}]
-res = nested_get1(data,['matches','goals','scorrer'])
+# res = nested_get1(data,['matches','goals','scorrer'])
+# print(res)
+# print(flatten(res))
+
+# nested_get_data = {
+#         'name': 'Walter White',
+#         'details': {
+#             'address':[[{
+#                 'city': 'Albuquerque'
+#           n  },{
+#                 'city': 'El Paso'
+#             }]]
+#         }
+#     }
+
+res = nested_get(data,['matches','goals','details'], default=None, flatten=True)
 print(res)
-print(flatten(res))

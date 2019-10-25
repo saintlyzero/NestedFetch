@@ -50,6 +50,60 @@ class TestNestedFetch(unittest.TestCase):
             }
         }
     
+    flatten_data = {
+        "league": "Champions League",
+        "matches": [
+            {
+            "match_id": "match_1",
+            "goals": [
+                {
+                "time": 13,
+                "scorrer": "Lionel Messi",
+                "assist": "Luis Suarez",
+                "details": [
+                    {
+                    "position": "outside-box"
+                    },
+                    {
+                    "position": "right-side"
+                    }
+                ]
+                },
+                {
+                "time": 78,
+                "scorrer": "Luis Suarez",
+                "assist": "Ivan Rakitic",
+                "details": [
+                    {
+                    "position": "inside-box"
+                    },
+                    {
+                    "position": "left-side"
+                    }
+                ]
+                }
+            ]
+            },
+            {
+            "match_id": "match_2",
+            "goals": [
+                {
+                "time": 36,
+                "scorrer": "C. Ronaldo",
+                "assist": "Luka Modric",
+                "details": [
+                    {
+                    "position": "penalty"
+                    },
+                    {
+                    "position": "d-box"
+                    }
+                ]
+                }
+            ]
+            }
+        ]
+        }
 
     def test_simple_get_success(self):
         res = nested_get(self.simple_get_data,['details','address','city'])
@@ -81,6 +135,16 @@ class TestNestedFetch(unittest.TestCase):
             self.assertEqual(res, None)
 
 
+    def test_nested_get_flatten(self):
+            res = nested_get(self.flatten_data,['matches','goals','scorrer'], default=None, flatten=True)
+            self.assertEqual(res, ['Lionel Messi', 'Luis Suarez', 'C. Ronaldo'])
+
+
+    def test_nested_get_ll_flatten(self):
+            res = nested_get(self.flatten_data,['matches','goals','details'], default=None, flatten=True)
+            self.assertEqual(res, [{'position': 'outside-box'}, {'position': 'right-side'}, {'position': 'inside-box'}, {'position': 'left-side'}, {'position': 'penalty'}, {'position': 'd-box'}])
+
+
     def test_simple_set_success(self):
             res = nested_set(self.simple_get_data,['details','address','city'], "Denver")
             self.assertEqual(res, 1)
@@ -97,36 +161,6 @@ class TestNestedFetch(unittest.TestCase):
                         'state': 'New Mexico'
                         }}})
 
-
-    # def test_nested_set_success(self):
-    #         res = nested_set(self.nested_get_data,['details','address','city'], "Denver")
-    #         self.assertEqual(res, 2)
-    #         self.assertEqual(self.nested_get_data,
-    #         {
-    #             'name': 'Walter White',
-    #             'details': {
-    #                 'address':[{
-    #                     'city': 'Denver'
-    #                 },{
-    #                     'city': 'Denver'
-    #                 }]
-    #             }
-    #         })
-    
-    # def test_nested_set_index_success(self):
-            # res = NestedFetch(self.nested_get_data).set_value(['details','address', 0, 'city'], "Denver")
-            # self.assertEqual(res, 1)
-            # self.assertEqual(self.nested_get_data,
-            # {
-            #     'name': 'Walter White',
-            #     'details': {
-            #         'address':[{
-            #             'city': 'Denver'
-            #         },{
-            #             'city': 'El Paso'
-            #         }]
-            #     }
-            # })
 
 if __name__ == "__main__":
     unittest.main()

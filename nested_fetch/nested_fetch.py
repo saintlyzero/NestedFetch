@@ -1,32 +1,37 @@
+import itertools
+
+def flatten_data(data):
+    if isinstance(data,list):
+        while(any(isinstance(o, list) for o in data)):
+            data = list(itertools.chain.from_iterable(data)) 
+    return data    
 
 
-def nested_get(data, keys, default=None):
+def nested_get(data, keys, default=None, flatten=False):
     '''@Arguments: keys -> sequential keys to iterate'''
-    value = None
-    # import pdb; pdb.set_trace()
-    try: 
-        for itr, key in enumerate(keys):
-            if value:
-                if isinstance(value, list):
-                    # if any(isinstance(o, list) for o in value):
-                        # new_value = []
-                        # for el in value:
-                        #     p = nested_get(el,keys[itr:],default=default)
-                        #     new_value.append(p)
-                        # value = new_value
+    
+    return {
+    True : lambda: flatten_data(_nested_get(data,keys,default)),
+    False : lambda: _nested_get(data,keys,default)
+    }.get(flatten, lambda : None)()
 
-                    if isinstance(key, int):
-                        value = value[key]
+
+def _nested_get(data, keys, default):
+    value = data
+    try:
+        for itr, key in enumerate(keys):
+            if isinstance(value, list):
+                if isinstance(key, int):
+                    if any(isinstance(o, list) for o in value):
+                        value = list(map((lambda o: default if (key >= len(o)) else o[key]), value))                        
                     else:
-                        value = list(map((lambda o: default if o == default else o.get(key, default)), value))                        
+                        value = value[key]
                 else:
-                    value = value.get(key, default)
+                    value = list(map((lambda o: default if o == default else _nested_get(o, [key], default)), value))                        
             else:
-                if isinstance(data, list):
-                    pass
-                else:
-                    value = dict.get(data, key, default)
-            if not value:
+                value = dict.get(value, key, default)
+            
+            if value == default:
                 break
         return value
     except Exception as e:
