@@ -40,7 +40,5 @@ data = {
             }
 ```
 
-<center>
-<img src="asset/NestedFetchConcept.jpg" alt="Nested Fetch Illustration" width="800" align="center"/>
-</center>
+![Nested Fetch Illustration](asset/NestedFetchConcept.jpg)
 
