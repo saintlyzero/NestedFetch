@@ -9,35 +9,32 @@ You can `get` `set` `update`, `flatten`  values from deeply nested dictionaries 
 
 ```python
 data = {
-            "league": "Champions League",
-            "matches": [
+        "league": "Champions League",
+        "matches": [
+            {
+                "match_id": "match_1",
+                "goals": [
                 {
-                    "match_id": "match_1",
-                    "goals": [
-                    {
-                        "time": 13,
-                        "scorrer": "Lionel Messi",
-                        "assist": "Luis Suarez"
-                    },
-                    {
-                        "time": 78,
-                        "scorrer": "Luis Suarez",
-                        "assist": "Ivan Rakitic"
-                    }
-                    ]
+                    "time": 13,
+                    "scorrer": "Lionel Messi",
+                    "assist": "Luis Suarez"
                 },
                 {
-                    "match_id": "match_2",
-                    "goals": [
-                    {
-                        "time": 36,
-                        "scorrer": "C. Ronaldo",
-                        "assist": "Luka Modric"
-                    }
-                    ]
-                }
-            ]
-            }
+                    "time": 78,
+                    "scorrer": "Luis Suarez",
+                    "assist": "Ivan Rakitic"
+                }]
+            },
+            {
+                "match_id": "match_2",
+                "goals": [
+                {
+                    "time": 36,
+                    "scorrer": "C. Ronaldo",
+                    "assist": "Luka Modric"
+                }]
+            }]
+        }
 ```
 
 ![Nested Fetch Illustration](asset/NestedFetchConcept.jpg)
