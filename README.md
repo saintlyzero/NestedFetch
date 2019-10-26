@@ -46,7 +46,7 @@ data = {
 
 ## Installation
 
-**NestedFetch** works with Python3. You can install it via `pip`
+**NestedFetch** works with Python3. <br>You can install it via `pip`
 ```pip3 install nestedfetch```
 
 ## Usage
@@ -59,24 +59,27 @@ from nested_fetch import nested_get, nested_set
 
 No need to instantiate any object, just use the methods specifying valid parameters.
 
-## Fetch Data
+## Examples
+
+### Fetch Data
 
 ```python
 nested_get(data, keys, default=None, flatten=False)
 
-```
+
 @Arguments:
 
-`data` => Dictionary/List
+data => dict / list
 
-`keys` => List of sequential keys leading to the desired value to fetch
+keys => List of sequential keys leading to the desired value to fetch
 
-`default` => Specifies the default value to be returned if any specified key is not present. If not specified, it will be `None`
+default => Specifies the default value to be returned if any specified key is not present. If not specified, it will be None
 
-`flatten` => Specifies whether to flatten the returned value
+flatten => Specifies whether to flatten the returned value
 
 @Return:
-Returns the fetched value if it exists, or returns specified `default` value
+Returns the fetched value if it exists, or returns specified default value
+```
 
 1. Fetching simple nested data :
 
@@ -229,24 +232,24 @@ res = nested_get(data,['matches','goals','scorrer'], flatten=True)
 # res = ['Lionel Messi', 'Luis Suarez', 'C. Ronaldo']
 ```
 
-## Set/ Update  Data
+### Set/ Update  Data
 
 ```python
 nested_set(data, keys, value, create_missing=False):
-```
+
 @Arguments
 
-`data` => Dictionary/List
+data => dict / list
 
-`keys` => List of sequential keys leading to the desired value to set/update
+keys => List of sequential keys leading to the desired value to set / update
 
-`value` => Specifies the value to be set/updated
+value => Specifies the value to set / update
 
-`create_missing` => Specifies whether to create new key while building up if the specified key does not exists
+create_missing => Specifies whether to create new key while building up if the specified key does not exists
 
 @Return:
 Returns the number of values upadted
-
+```
 
 
 1. Setting simple nested data :
