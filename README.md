@@ -54,7 +54,7 @@ data = {
 
 **NestedFetch** works with Python3. <br>You can directly install it via **pip**<br>
 
-```bash
+```sh
 $ pip3 install nestedfetch
 ```
 
