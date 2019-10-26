@@ -11,7 +11,7 @@
 
 ## Overview
 **NestedFetch** provides syntactic sugar 🍬 to deal with nested python `dictionary` and `list`  🐍.<br>
-You can `get`, `set`, `update` and `flatten`  values from deeply nested dictionaries and lists with a more concise, easier and a more ` KeyError `, `IndexError` free way 😌.  
+You can `get`, `set`, `update` and `flatten`  values from deeply nested dictionaries and lists with a more concise, easier and a more `KeyError`, `IndexError` free way 😌.  
 
 ```python
 data = {
@@ -43,11 +43,12 @@ data = {
         }
 ```
 
-![NestedFetch Illustration](asset/NestedFetchConcept.jpg)
-
+| ![No Face](asset/no.jpg) | ![normal code](asset/normal.png) |
+|--|--|
+| ![Yes Face](asset/yes.jpg) |![NestedFetch code](asset/nested_get.png)
 ## Installation
 
-**NestedFetch** works with Python3. <br>You can install it via `pip`<br>
+**NestedFetch** works with Python3. <br>You can install it via **pip**<br>
 ```pip3 install nestedfetch```
 
 ## Usage
