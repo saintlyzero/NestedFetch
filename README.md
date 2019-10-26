@@ -7,6 +7,8 @@
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Examples](#examples)
+    1. [Fetch Value](#fetch-data)
+    2. [Set Value](#set--update--data)
 5. [How to Contribute](#how-to-contribute)
 
 ## Overview
