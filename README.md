@@ -4,10 +4,10 @@
 ## Outline
 
 1. [Overview](#overview)
-2. [Installation](installation)
-3. [Usage](usage)
-4. [Examples](examples)
-5. [How to Contribute]()
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Examples](#examples)
+5. [How to Contribute](#how-to-contribute)
 
 ## Overview
 **NestedFetch** provides syntactic sugar 🍬 to deal with nested python `dictionary` and `list`  🐍.<br>
@@ -350,3 +350,7 @@ res = nested_set(data,['details','address','state'], "New Mexico", create_missin
 #         }
 
 ```
+
+## How to contribute
+
+Contributions are welcomed and anyone can feel free to submit a patch, report a bug or ask for a feature. <br>Please open an issue first in order to encourage and keep tracks of potential discussions
