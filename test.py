@@ -1,6 +1,6 @@
 # from nested_fetch.nested_fetch import NestedFetch
-import itertools
-from nested_fetch.nested_fetch import nested_get, nested_set
+# import itertools
+from nested_fetch import nested_get, nested_set
 #import copy
 # import functools 
 
@@ -31,42 +31,42 @@ data = {
     }]
 }
 
-def nested_set(dic, keys, value, create_missing=False, _count = 0):
-    d = dic
-    count = _count
-    try:
-        for itr, key in enumerate(keys[:-1]):
-            if key in d:
-                d = d[key]
-                if isinstance(d, list):
-                    if (itr != len(keys)-1) and (isinstance(keys[itr+1], int)):
-                        if (itr == len(keys)-2):
-                            d[keys[-1]] = value
-                            count += 1
-                        else:
-                            d = d[keys[itr+1]]
-                            count = nested_set(d, keys[itr+2:], value, create_missing, _count= count)
-                    else:
-                        count = sum(list(map((lambda o: nested_set(o,keys[itr+1:],value,create_missing,_count = count)),d)))
+# def nested_set(dic, keys, value, create_missing=False, _count = 0):
+#     d = dic
+#     count = _count
+#     try:
+#         for itr, key in enumerate(keys[:-1]):
+#             if key in d:
+#                 d = d[key]
+#                 if isinstance(d, list):
+#                     if (itr != len(keys)-1) and (isinstance(keys[itr+1], int)):
+#                         if (itr == len(keys)-2):
+#                             d[keys[-1]] = value
+#                             count += 1
+#                         else:
+#                             d = d[keys[itr+1]]
+#                             count = nested_set(d, keys[itr+2:], value, create_missing, _count= count)
+#                     else:
+#                         count = sum(list(map((lambda o: nested_set(o,keys[itr+1:],value,create_missing,_count = count)),d)))
                     
-                    return count
+#                     return count
 
-            elif create_missing:
-                d = d.setdefault(key, {})
-            else:
-                return count
-        if (keys[-1] in d or create_missing):
-            d[keys[-1]] = value
-            return count + 1
-        elif (isinstance(keys[-1], int)) and isinstance(d, list):
-            d[keys[-1]] = value
-            return count + 1
+#             elif create_missing:
+#                 d = d.setdefault(key, {})
+#             else:
+#                 return count
+#         if (keys[-1] in d or create_missing):
+#             d[keys[-1]] = value
+#             return count + 1
+#         elif (isinstance(keys[-1], int)) and isinstance(d, list):
+#             d[keys[-1]] = value
+#             return count + 1
 
-        else:
-            return count
+#         else:
+#             return count
 
-    except Exception as e:
-        return count
+#     except Exception as e:
+#         return count
  
 
 data = {
@@ -78,12 +78,12 @@ data = {
     }]
 }
 
-def flatten(data):
+# def flatten(data):
     
-    if isinstance(data,list):
-        while(any(isinstance(o, list) for o in data)):
-            data = list(itertools.chain.from_iterable(data)) 
-    return data    
+#     if isinstance(data,list):
+#         while(any(isinstance(o, list) for o in data)):
+#             data = list(itertools.chain.from_iterable(data)) 
+#     return data    
 
 
 # print(data)
@@ -206,5 +206,35 @@ def nested_get1(data, keys, default=None):
 #         }
 #     }
 
-res = nested_get(data,['matches','goals','details'], default=None, flatten=True)
+# res = nested_get(data,['matches','goals','details'], default=None, flatten=True)
+# print(res)
+
+data = {
+        "league": "Champions League",
+        "matches": [
+            {
+                "match_id": "match_1",
+                "goals": [
+                {
+                    "time": 13,
+                    "scorrer": "Lionel Messi",
+                    "assist": "Luis Suarez"
+                },
+                {
+                    "time": 78,
+                    "scorrer": "Luis Suarez",
+                    "assist": "Ivan Rakitic"
+                }]
+            },
+            {
+                "match_id": "match_2",
+                "goals": [
+                {
+                    "time": 36,
+                    "scorrer": "C. Ronaldo",
+                    "assist": "Luka Modric"
+                }]
+            }]
+        }
+res = nested_get(data,['matches','goals','scorrer'], flatten=True)
 print(res)
