@@ -9,7 +9,7 @@
 4. [Examples](#examples)
     1. [Fetch Value](#fetch-data)
     2. [Set Value](#set--update--data)
-    3. [Flatten Nested Lists](#flatten--nested--lists)
+    3. [Flatten Nested Lists](#flatten-nested-lists)
 5. [How to Contribute](#how-to-contribute)
 
 ## Overview
@@ -82,7 +82,7 @@ flatten => Specifies whether to flatten the returned value
 Returns the fetched value if it exists, or returns specified default value
 ```
 
-1. Fetching simple nested data :
+1. **Fetch** simple nested data :
 
 ```python
 data = {
@@ -97,7 +97,7 @@ res = nested_get(data,['details','address','city'])
 # res = Albuquerque
 ```
 
-2. Fetching simple nested data with `default` value:
+2. **Fetch** simple nested data with `default` value:
 
 ```python
 data = {
@@ -112,7 +112,7 @@ res = nested_get(data,['details','address','state'], default=-1)
 # res = -1
 ```
 
-3. Fetching nested data:
+3. **Fetch** nested data:
 
 ```python
 data = {
@@ -129,7 +129,7 @@ res = nested_get(data,['details','address','city'])
 # res = ['Albuquerque','El Paso']
 ```
 
-4. Fetching nested data with `default` value:
+4. **Fetch** nested data with `default` value:
 
 ```python
 data = {
@@ -148,7 +148,7 @@ res = nested_get(data,['details','address','city'], default= None)
 # res = ['Albuquerque','El Paso', None]
 ```
 
-5. Fetching nested data by specifing `index`:
+5. **Fetch** nested data by specifing `index`:
 
 ```python
 data = {
@@ -165,7 +165,7 @@ res = nested_get(data,['details','address','city', 0])
 # res = Albuquerque
 ```
 
-6. Fetching nested data without `flatten`:
+6. **Fetch** nested data without `flatten`:
 
 ```python
 data = {
@@ -199,7 +199,7 @@ res = nested_get(data,['matches','goals','scorrer'])
 # res = [['Lionel Messi', 'Luis Suarez'], ['C. Ronaldo']]
 ```
 
-8. Fetching nested data with `flatten`:
+8. **Fetch** nested data with `flatten`:
 
 ```python
 data = {
@@ -249,7 +249,7 @@ Returns the number of values updated
 ```
 
 
-1. Setting simple nested data :
+1. **Update** value of simple nested data :
 
 ```python
 data = {
@@ -274,7 +274,7 @@ res = nested_set(data,['details','address','city'], "Denver")
 
 ```
 
-2. Setting nested data:
+2. **Update** nested data:
 
 ```python
 data = {
@@ -302,7 +302,7 @@ res = nested_set(data,['details','address','city'], "Denver")
 # }
 ```
 
-3. Setting nested data with Index:
+3. **Update** nested data with `index`:
 
 ```python
 data = {
@@ -330,7 +330,7 @@ res = nested_set(data,['details','address',0,'city'], "Denver")
 # }
 ```
 
-4. Setting nested data with `create_missing` :
+4. **Set** nested data with `create_missing` :
 
 ```python
 data = {
@@ -368,7 +368,7 @@ data => list of list
 Returns the flattened list
 ```
 
-1. Flatten List of Lists
+1. **Flatten** List of Lists
 
 ```python
 data = [[
@@ -382,4 +382,4 @@ res = flatten_data(data)
 
 ## How to contribute
 
-Contributions are welcomed and anyone can feel free to submit a patch, report a bug or ask for a feature. <br>Please open an issue first in order to encourage and keep tracks of potential discussions
+Contributions are welcomed and anyone can feel free to submit a patch, report a bug 🐛 or ask for a feature 🐣. <br>Please open an issue first in order to encourage and keep tracks of potential discussions 📝
