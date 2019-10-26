@@ -8,7 +8,7 @@ setup(
   packages = ['nestedfetch'],
   version = '0.1',
   license='MIT',
-  description = 'syntactic sugar candy to deal with nested python dictionary and list. You can get, set, update and flatten values from deeply nested dictionaries and lists with a more concise, easier and a more KeyError, IndexError free way',
+  description = 'Syntactic sugar to deal with nested python dictionary and list. You can get, set, update and flatten values from deeply nested dictionaries and lists with a more concise, easier and a more KeyError, IndexError free way',
   long_description=readme,
   author = 'Shubham Dalvi',
   author_email = 'shubham.dalvi97@gmail.com', 
