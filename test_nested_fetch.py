@@ -1,5 +1,5 @@
 import unittest  
-from nested_fetch import nested_get, nested_set, flatten_data
+from nestedfetch import nested_get, nested_set, flatten_data
 
 class TestNestedFetch(unittest.TestCase):
 

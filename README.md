@@ -52,15 +52,18 @@ data = {
 | ![Yes Face](asset/yes.jpg) |![NestedFetch code](asset/nested_get.png)
 ## Installation
 
-**NestedFetch** works with Python3. <br>You can install it via **pip**<br>
-```pip3 install nestedfetch```
+**NestedFetch** works with Python3. <br>You can directly install it via **pip**<br>
+
+```bash
+$ pip3 install nestedfetch
+```
 
 ## Usage
 
 Import the methods from the package. 
 
 ```python3
-from nested_fetch import nested_get, nested_set
+from nestedfetch import nested_get, nested_set
 ```
 
 No need to instantiate any object, just use the methods specifying valid parameters.
