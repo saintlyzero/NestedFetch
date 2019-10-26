@@ -1,6 +1,16 @@
 import itertools
 
 def flatten_data(data):
+    """
+        @Arguments:
+
+        data : list
+
+        @Return:
+
+        Returns the flattened list
+    """
+
     if isinstance(data,list):
         while(any(isinstance(o, list) for o in data)):
             data = list(itertools.chain.from_iterable(data)) 
@@ -8,8 +18,23 @@ def flatten_data(data):
 
 
 def nested_get(data, keys, default=None, flatten=False):
-    '''@Arguments: keys -> sequential keys to iterate'''
-    
+    '''
+        @Arguments:
+
+        data : dict / list
+
+        keys => List of sequential keys leading to the desired value to fetch
+
+        default => Specifies the default value to be returned if any specified key is not present. 
+        If not specified, it will be None
+
+        flatten => Specifies whether to flatten the returned value
+
+        @Return:
+
+        Returns the fetched value if it exists, or returns specified default value
+    '''
+
     return {
     True : lambda: flatten_data(_nested_get(data,keys,default)),
     False : lambda: _nested_get(data,keys,default)
@@ -39,6 +64,23 @@ def _nested_get(data, keys, default):
 
 
 def nested_set(data, keys, value, create_missing=False, _count = 0):
+
+    """
+        @Arguments:
+
+        data => dict / list
+
+        keys => List of sequential keys leading to the desired value to set / update
+
+        value => Specifies the value to set / update
+
+        create_missing => Specifies whether to create new key while building up if the specified key does not exists
+
+
+        @Return:
+
+        Returns the number of values updated
+    """
     d = data
     count = _count
     try:

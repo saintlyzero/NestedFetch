@@ -9,11 +9,13 @@
 4. [Examples](#examples)
     1. [Fetch Value](#fetch-data)
     2. [Set Value](#set--update--data)
+    3. [Flatten Nested Lists](#flatten--nested--lists)
 5. [How to Contribute](#how-to-contribute)
 
 ## Overview
 **NestedFetch** provides syntactic sugar 🍬 to deal with nested python `dictionary` and `list`  🐍.<br>
-You can `get`, `set`, `update` and `flatten`  values from deeply nested dictionaries and lists with a more concise, easier and a more `KeyError`, `IndexError` free way 😌.  
+You can `get`, `set`, `update` and `flatten`  values from deeply nested dictionaries and lists with a more concise, easier and a more `KeyError`, `IndexError` free way 😌. <br>
+You can further `flatten` lists of lists having same depth.
 
 ```python
 data = {
@@ -352,6 +354,30 @@ res = nested_set(data,['details','address','state'], "New Mexico", create_missin
 #             }
 #         }
 
+```
+
+### Flatten Nested Lists
+
+```python
+flatten_data(data):
+
+@Arguments
+data => list of list
+
+@Return
+Returns the flattened list
+```
+
+1. Flatten List of Lists
+
+```python
+data = [[
+    ['This','is'],
+    ['flattened', 'data']
+]]
+
+res = flatten_data(data)
+# res = ['This','is','flattened','data']
 ```
 
 ## How to contribute

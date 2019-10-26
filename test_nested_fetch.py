@@ -1,5 +1,5 @@
 import unittest  
-from nested_fetch.nested_fetch import nested_get, nested_set
+from nested_fetch import nested_get, nested_set, flatten_data
 
 class TestNestedFetch(unittest.TestCase):
 
@@ -105,6 +105,16 @@ class TestNestedFetch(unittest.TestCase):
         ]
         }
 
+    flatten_test_data = [
+        ['This','is'],
+        ['flattened', 'data']
+    ]
+
+    flatten_nested_data = [[
+        ['This','is'],
+        ['flattened', 'data']
+    ]]
+
     def test_simple_get_success(self):
         res = nested_get(self.simple_get_data,['details','address','city'])
         self.assertEqual(res, 'Albuquerque')
@@ -160,6 +170,16 @@ class TestNestedFetch(unittest.TestCase):
                         'city':'Albuquerque', 
                         'state': 'New Mexico'
                         }}})
+
+    def test_simple_flatten(self):
+            res = flatten_data(self.flatten_test_data)
+            self.assertEqual(res, ['This','is','flattened','data'])
+
+
+    def test_nested_flatten(self):
+            res = flatten_data(self.flatten_nested_data)
+            self.assertEqual(res, ['This','is','flattened','data'])
+
 
 
 if __name__ == "__main__":
