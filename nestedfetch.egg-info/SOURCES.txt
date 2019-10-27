@@ -1,0 +1,9 @@
+README.md
+setup.cfg
+setup.py
+nestedfetch/__init__.py
+nestedfetch/nested_fetch.py
+nestedfetch.egg-info/PKG-INFO
+nestedfetch.egg-info/SOURCES.txt
+nestedfetch.egg-info/dependency_links.txt
+nestedfetch.egg-info/top_level.txt
