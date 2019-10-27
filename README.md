@@ -13,9 +13,9 @@
 5. [How to Contribute](#how-to-contribute)
 
 ## Overview
-**NestedFetch** provides syntactic sugar 🍬 to deal with nested python `dictionary` and `list`  🐍.<br>
-You can `get`, `set`, `update` and `flatten`  values from deeply nested dictionaries and lists with a more concise, easier and a more `KeyError`, `IndexError` free way 😌. <br>
-You can further `flatten` lists of lists having same depth.
+**NestedFetch** provides syntactic sugar 🍬 to deal with a nested python `dictionary` or a nested `list`  🐍.<br>
+You can `get`, `set`, `update` and `flatten` values from a deeply nested dictionary or a list with a more concise, easier and a more `KeyError`, `IndexError` free way 😌. <br>
+You can further `flatten` lists of lists having the same depth.
 
 ```python
 data = {
@@ -385,4 +385,4 @@ res = flatten_data(data)
 
 ## How to contribute
 
-Contributions are welcomed and anyone can feel free to submit a patch, report a bug 🐛 or ask for a feature 🐣. <br>Please open an issue first in order to encourage and keep tracks of potential discussions 📝
+Contributions are welcome 😇.<br>Feel free to submit a patch, report a bug 🐛 or ask for a feature 🐣. <br>Please open an issue first to encourage and keep track of potential discussions 📝.
