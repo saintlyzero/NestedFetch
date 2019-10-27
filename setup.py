@@ -3,15 +3,15 @@ from setuptools import setup, find_packages
 setup(
   name = 'nestedfetch',
   packages = ['nestedfetch'],
-  version = '0.1.1',
+  version = '0.1.2',
   license='MIT',
-  description = 'Syntactic sugar to perform GET, SET and FLATTEN values from nested dictionaries and nested lists.',
+  description = 'Syntactic sugar to GET, SET, UPDATE and FLATTEN values from nested dictionaries and nested lists.',
   long_description=open("README.md").read(),
   long_description_content_type='text/markdown',
   author = 'Shubham Dalvi',
   author_email = 'shubham.dalvi97@gmail.com', 
   url = 'https://github.com/saintlyzero/NestedFetch',
-  download_url = ('https://github.com/saintlyzero/NestedFetch/archive/v_011.tar.gz'),
+  download_url = ('https://github.com/saintlyzero/NestedFetch/archive/v_012.tar.gz'),
   keywords = ['dict','nested dictionary','nested list','list','flatten','scalpl','nestedfetch','addict','box','Nested Fetch'],
   install_requires=[],
   classifiers=[
