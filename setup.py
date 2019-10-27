@@ -5,7 +5,7 @@ setup(
   packages = ['nestedfetch'],
   version = '0.1.1',
   license='MIT',
-  description = 'Syntactic sugar to deal with nested dictionaries and list. You can get, set, update or flatten values from a deeply nested dictionary or a nested list with a more concise, easier and a more KeyError, IndexError free way',
+  description = 'Syntactic sugar to perform GET, SET and FLATTEN values from nested dictionaries and nested lists.',
   long_description=open("README.md").read(),
   long_description_content_type='text/markdown',
   author = 'Shubham Dalvi',
