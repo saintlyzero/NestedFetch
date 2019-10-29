@@ -5,7 +5,7 @@ setup(
   packages = ['nestedfetch'],
   version = '0.1.2',
   license='MIT',
-  description = 'Syntactic sugar to GET, SET, UPDATE and FLATTEN values from nested dictionaries and nested lists.',
+  description = 'Syntactic sugar inspired by XPath to GET, SET, UPDATE and FLATTEN values from nested dictionaries and nested lists',
   long_description=open("README.md").read(),
   long_description_content_type='text/markdown',
   author = 'Shubham Dalvi',

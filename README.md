@@ -13,7 +13,7 @@
 5. [How to Contribute](#how-to-contribute)
 
 ## Overview
-- **NestedFetch** provides syntactic sugar 🍬 to deal with a nested python `dictionary` or a nested `list` 🐍
+- **NestedFetch** provides syntactic sugar 🍬 inspired by XPath to deal with a nested python `dictionary` or a nested `list` 🐍
 - You can `get`, `set`, `update` and `flatten` values from a deeply nested dictionary or a list with a more concise, easier and a `KeyError`, `IndexError` free way 😌
 
 ```python
@@ -62,7 +62,7 @@ $ pip3 install nestedfetch
 Import the methods from the package. 
 
 ```python3
-from nestedfetch import nested_get, nested_set
+from nestedfetch import nested_get, nested_set, flatten_data
 ```
 
 No need to instantiate any object, just use the methods specifying valid parameters.
