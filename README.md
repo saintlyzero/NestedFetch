@@ -46,9 +46,9 @@ data = {
         }
 ```
 
-| ![No Face](https://github.com/saintlyzero/NestedFetch/raw/development/asset/no.jpg) | ![normal code](https://github.com/saintlyzero/NestedFetch/raw/master/asset/normal.png) |
+| ![No Face](https://github.com/saintlyzero/NestedFetch/raw/development/asset/no.jpg) | ![normal code](https://github.com/saintlyzero/NestedFetch/raw/master/asset/before.png) |
 |--|--|
-| ![Yes Face](https://github.com/saintlyzero/NestedFetch/raw/master/asset/yes.jpg) |![NestedFetch code](https://github.com/saintlyzero/NestedFetch/raw/master/asset/nested_get.png)
+| ![Yes Face](https://github.com/saintlyzero/NestedFetch/raw/master/asset/yes.jpg) |![NestedFetch code](https://github.com/saintlyzero/NestedFetch/raw/master/asset/after.png)
 ## Installation
 
 **NestedFetch** works with Python3. <br>You can directly install it via **pip**<br>
